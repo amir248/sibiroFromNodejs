@@ -218,7 +218,7 @@ body > main > section > p{
     display:flex;
     justify-content: center;
     align-items: center;
-    /* flex-wrap: wrap; */
+    flex-wrap: wrap;
     min-height: 532px;
     width:100%;
     max-width: var(--maxWidth);
@@ -229,6 +229,7 @@ body > main > section > p{
     /* background: yellow; */
     height: 535px;
     margin:0.5%;
+    /* max-width:100%; */
   }
   #photos > .imge > img{
     width:350px;
@@ -244,6 +245,7 @@ body > main > section > p{
     flex-wrap: wrap;
     width:calc(100% - 6%);
     max-width:550px;
+    overflow: hidden;
   }
   .proc{
     width:calc(100% - 6%);
@@ -312,7 +314,7 @@ body > main:nth-child(2) > button:nth-child(4){
     display:flex;
     justify-content: center;
     align-items: center;
-    /* background: green; */
+    background: green;
     overflow: hidden;
     flex-wrap: wrap;
   }
