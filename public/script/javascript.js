@@ -1,7 +1,7 @@
 if(innerWidth<700){
   let menu=document.createElement('p');
   menu.setAttribute('id','menu');
-  menu.style.cssText=`z-index:9;`;
+  menu.style.cssText=`z-index:9;position:fixed;top:17px;`;
   document.querySelector('nav').prepend(menu);
 
   let spanOne=document.createElement('span');
@@ -35,26 +35,31 @@ document.querySelector('#menu').addEventListener('click',()=>{
       flex-direction:column;
     `;
     newBox.innerHTML=`
-      <h1 id='ok'>oK</h1>
-      <h1 id='home'>home</h1>
-      <h1 id='footer'>footer</h1>
+      <h1 id="ok-menu">ok</h1>
+      <h1 id="photo-menu">photo</h1>
+      <h1 id="home-menu">home</h1>
+      <h1 id="footer-menu">footer</h1>
     `;
     document.querySelector('body').append(newBox);
     document.querySelector('body > div').addEventListener('click',()=>{
       document.querySelector('body > div').remove();
       countClick=0;
     });
-    document.querySelector('#ok').addEventListener('click',()=>{
+    document.querySelector('#ok-menu').addEventListener('click',()=>{
       console.log('ok');
-      window.location.href='#ok';
+      window.location.href='#oks';
     });
-    document.querySelector('#footer').addEventListener('click',()=>{
+    document.querySelector('#footer-menu').addEventListener('click',()=>{
       console.log('footer');
-      window.location.href=' ';
+      window.location.href='#footer';
     });
-    document.querySelector('#home').addEventListener('click',()=>{
+    document.querySelector('#home-menu').addEventListener('click',()=>{
       console.log('home');
-      window.location.href'#oo';
+      window.location.href='#';
+    });
+    document.querySelector('#photo-menu').addEventListener('click',()=>{
+      console.log('photo');
+      window.location.href='#photos';
     });
   }else if(countClick==2){
     document.querySelector('body > div').remove();
