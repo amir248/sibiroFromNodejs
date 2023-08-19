@@ -65,6 +65,13 @@ white-space: nowrap;
     width:100%;
     /* background: green; */
   }
+  /* ************************************************ */
+  @media(max-width:700px){
+    header nav ul{
+      display: none;
+    }
+  }
+  /* ******************************************* */
   section:nth-child(1){
     display:flex;
     justify-content:space-between;
@@ -153,7 +160,7 @@ white-space: nowrap;
   .buttonOnNextButton{
     min-height: 170px;
     max-width:var(--middleWidth);
-    width:100%;
+    width:calc(100% - 6%);
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -234,10 +241,12 @@ body > main > section > p{
     margin-top:44px;
     justify-content: center;
     align-items: flex-start;
-
+    flex-wrap: wrap;
+    width:calc(100% - 6%);
+    max-width:550px;
   }
   .proc{
-    width:100%;
+    width:calc(100% - 6%);
     max-width:554px;
     margin-right: 15px;
   }
@@ -246,7 +255,8 @@ body > main > section > p{
     margin-bottom:3%;
   }
   .proc > img{
-    width:550px;
+    width:calc(100% - 7%);
+    max-width:550px;
     height: 370px;
     border-radius: 17px;
   }
@@ -264,22 +274,25 @@ body > main > section > p{
   }
 
 body > main:nth-child(2) > button:nth-child(4){
-  background: none;
+    background: none;
     margin-top:75px;
-    width:370px;
+    width:calc(100% - 2px);
+    max-width:370px;
     height: 57px;
     border:1px solid black;
     text-transform:uppercase;
     font-size:var(--mainFontSize);
   }
+
   body > main:nth-child(2) > button:nth-child(4):hover{
     color:white;
     background: black;
   }
   body > main:nth-child(2) > .discount{
-    background: none;
+      background: none;
       margin-top:75px;
-      width:270px;
+      width:100%;
+      max-width:calc(270px - 2px);
       height: 57px;
       border:1px solid black;
       text-transform:uppercase;
@@ -292,22 +305,33 @@ body > main:nth-child(2) > button:nth-child(4){
   body > main > section:nth-child(6) > h2{
     width:100%;
   }
-  body > main > section:nth-child(6){
+
+  body > main > section:nth-child(7){
+    width:100%;
+    max-width:calc(300px - 1px);
     display:flex;
     justify-content: center;
     align-items: center;
+    /* background: green; */
+    overflow: hidden;
+    flex-wrap: wrap;
   }
-  body > main > section:nth-child(6) > .box{
-    width:300px;
+  body > main > section:nth-child(7) > .imge{
+    width:100%;
+    max-width:300px;
     height:500px;
+  }
+  body > main > section:nth-child(7) #photos{
+    flex-wrap: wrap;
   }
   .imge > p{
     width:300px;
   }
   section:nth-child(10){
     display:flex;
-
+    width:calc(100% - 6%);
     /* flex-direction: row; */
+    flex-wrap:wrap;
   }
   body > main > section > div > ol > li > details > p{
     font-size: var(--mainFontSize);
@@ -315,7 +339,8 @@ body > main:nth-child(2) > button:nth-child(4){
   /* .getConsultation */
  .getConsultation{
     background: none;
-    width:337px;
+    width:100%;
+    max-width:calc(337px - 7%);
     height:57px;
     border:1px black solid;
     text-transform: uppercase;
@@ -327,8 +352,27 @@ body > main:nth-child(2) > button:nth-child(4){
    }
 
 
+   /* MAP */
+   body > main:nth-child(2) > section:nth-child(15){
+     display:flex;
+     justify-content: center;
+     align-items: center;
+     flex-wrap: wrap;
+     /* background: violet; */
+   }
+   /* .map > iframe:nth-child(1) */
+    /* .map > iframe:nth-child(1){
+      width:100%;
+      max-width: 700px;
+      height:450px;
+    } */
+@media(max-width:700px){
+  .map > iframe:nth-child(1){
+  width:100%;
+  max-width: 700px;
+  }
 
-
+}
    .item{
      /* display: inline-block; */
      /* margin: 0 0.5em; */
@@ -368,12 +412,4 @@ list-style-type: none; /* Убираем маркеры */
    li > a > img{
      width:37px;
      height:37px;
-   }
-
-
-   body > main:nth-child(2) > section:nth-child(15){
-     display:flex;
-     justify-content: center;
-     align-items: center;
-     flex-wrap: wrap;
    }
