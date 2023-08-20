@@ -428,6 +428,21 @@ list-style-type: none; /* Убираем маркеры */
   .line:nth-child(5){
     display:none;
   }
+  .imge:nth-child(2){
+    display:none;
+  }
+  .imge:nth-child(3){
+    display:none;
+  }
+  .imge:nth-child(4){
+    display:none;
+  }
+  .imge:nth-child(5){
+    display:none;
+  }
+  .imge:nth-child(6){
+    display:none;
+  }
 }
 /* // MENU */
 .openMenu{
