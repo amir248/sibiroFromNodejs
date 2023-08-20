@@ -429,3 +429,36 @@ list-style-type: none; /* Убираем маркеры */
     display:none;
   }
 }
+/* // MENU */
+.openMenu{
+  display:flex;
+  position:fixed;
+  justify-content:center;
+  align-items:center;
+  // width:100%;
+  width:0px;
+  height:100vh;
+  background:black;
+  top:0;
+  z-index:0;
+  background:white;
+  flex-direction:column;
+  opacity:0;
+  transition: all 1s ease-out;
+}
+.spOne{
+  transition: all 1s ease-out;
+  transform: rotate(50deg);
+}
+.spTwo{
+  margin-bottom:0;
+  margin-top:0;
+  display:none;
+  margin:0;
+  transition: all 1s ease-out;
+  opacity:0;
+}
+.spThree{
+  transition: all 1s ease-out;
+  transform: rotate(-50deg);
+}
