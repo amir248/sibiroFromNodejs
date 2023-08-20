@@ -137,15 +137,28 @@ function displayWidth(){
 window.addEventListener('DOMContentLoaded',displayWidth);
 setInterval(displayWidth,7000);
 
+//inscription more photos click flipping
 let clickFlipping=document.createElement('span');
-clickFlipping.innerHTML=`Фотографии листатается нажатием`;
+clickFlipping.innerHTML=`<span style='width:100%;max-width:700px;overflow:hidden;'>Фотографии листатается нажатием</span>`;
 document.querySelector('#photos').append(clickFlipping);
 const arrayPhoto=['https://n1s2.hsmedia.ru/66/99/3d/66993d265ae81bfb2eac171053f2c010/1597x892_0xac120003_1644557031599829157.jpg','https://spb.stilkuhni.ru/upload/iblock/cea/029b18009d4fc63dcbce5c217f91c77a.png','https://ritzmebel.ru/wp-content/themes/provodnik/assets/images/production_1.jpg','https://geometria-loft.ru/wp-content/uploads/2018/10/1-2.jpg']
 let clickPhoto=+0;
-document.querySelector('body > main:nth-child(2) > div:nth-child(2) > div:nth-child(1) > img:nth-child(1)').addEventListener('click',()=>{
+document.querySelector('#photos > .imge > img').addEventListener('click',()=>{
   clickPhoto++;
   if(clickPhoto>=arrayPhoto.length){
     clickPhoto=0;
   }
   document.querySelector('body > main:nth-child(2) > div:nth-child(2) > div:nth-child(1) > img:nth-child(1)').setAttribute('src', arrayPhoto[clickPhoto]);
-})
+});
+
+//first photo gallery
+let firstGalleryCountClick=+0;
+const arrayFirstGallery=['https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrSbB_3OpxKCHZLJ60o9LHtjiLPZ5CfP6bBg&usqp=CAU','https://www.everysteph.com/wp-content/uploads/2022/12/Hulk-IMG-Worlds-of-Adventure.jpeg.webp','https://www.imgacademy.com/sites/default/files/boarding-homepage-row-2022-mobile.jpg','https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKAarQVfK-Bj9pho_3C2nShllmaDZlCaVCpXYwSXdtxIp0o43wP4aPRpifI0PDytAgRjY&usqp=CAU','https://www.imgworlds.com/_next/static/media/iron-man.628104a8.png'];
+document.querySelector('.fivePhoto > .line > img').addEventListener('click',()=>{
+  // console.log(firstGalleryCountClick);
+  firstGalleryCountClick++;
+  if(firstGalleryCountClick>=arrayFirstGallery.length){
+    firstGalleryCountClick=0;
+  }
+  document.querySelector('.fivePhoto > .line > img').setAttribute('src',arrayFirstGallery[firstGalleryCountClick]);
+});

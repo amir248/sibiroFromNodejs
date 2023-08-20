@@ -443,6 +443,9 @@ list-style-type: none; /* Убираем маркеры */
   .imge:nth-child(6){
     display:none;
   }
+  #photos{
+    flex-direction: column;
+  }
 }
 /* // MENU */
 .openMenu{
