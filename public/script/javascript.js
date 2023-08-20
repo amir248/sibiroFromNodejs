@@ -138,7 +138,7 @@ window.addEventListener('DOMContentLoaded',displayWidth);
 setInterval(displayWidth,7000);
 
 let clickFlipping=document.createElement('span');
-clickFlipping.innerHTML=`Фотография листатается нажатием`;
+clickFlipping.innerHTML=`Фотографии листатается нажатием`;
 document.querySelector('#photos').append(clickFlipping);
 const arrayPhoto=['https://n1s2.hsmedia.ru/66/99/3d/66993d265ae81bfb2eac171053f2c010/1597x892_0xac120003_1644557031599829157.jpg','https://spb.stilkuhni.ru/upload/iblock/cea/029b18009d4fc63dcbce5c217f91c77a.png','https://ritzmebel.ru/wp-content/themes/provodnik/assets/images/production_1.jpg','https://geometria-loft.ru/wp-content/uploads/2018/10/1-2.jpg']
 let clickPhoto=+0;
