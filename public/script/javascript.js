@@ -125,8 +125,8 @@ document.querySelector('#menu').addEventListener('click',()=>{
     setTimeout(()=>{
       document.querySelector('body > div').remove();
       countClick=0;
+      closeMenuSpan();
     },70);
-    closeMenuSpan();
   }
   console.log('click');
 });
