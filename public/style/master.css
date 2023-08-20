@@ -415,3 +415,17 @@ list-style-type: none; /* Убираем маркеры */
      width:37px;
      height:37px;
    }
+@media(max-width:700px){
+  .line:nth-child(2){
+    display:none;
+  }
+  .line:nth-child(3){
+    display:none;
+  }
+  .line:nth-child(4){
+    display:none;
+  }
+  .line:nth-child(5){
+    display:none;
+  }
+}
