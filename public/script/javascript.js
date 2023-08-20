@@ -97,7 +97,7 @@ document.querySelector('#menu').addEventListener('click',()=>{
     document.querySelector('body').append(newBox);
     document.querySelector('body > div').addEventListener('click',()=>{
       closeMenuSpan();
-      document.querySelector('body > div').remove();
+      // document.querySelector('body > div').remove();
       document.querySelector('body > .openMenu').remove();
       countClick=0;
     });
