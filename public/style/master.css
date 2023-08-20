@@ -446,19 +446,3 @@ list-style-type: none; /* Убираем маркеры */
   opacity:0;
   transition: all 1s ease-out;
 }
-.spOne{
-  transition: all 1s ease-out;
-  transform: rotate(50deg);
-}
-.spTwo{
-  margin-bottom:0;
-  margin-top:0;
-  display:none;
-  margin:0;
-  transition: all 1s ease-out;
-  opacity:0;
-}
-.spThree{
-  transition: all 1s ease-out;
-  transform: rotate(-50deg);
-}
