@@ -112,7 +112,8 @@ document.querySelector('#menu').addEventListener('click',()=>{
     });
     document.querySelector('#home-menu').addEventListener('click',()=>{
       console.log('home');
-      window.location.href='#';
+      window.location.href='';
+      window.scroll(0,0);
       closeMenuSpan();
     });
     document.querySelector('#photo-menu').addEventListener('click',()=>{
@@ -121,11 +122,11 @@ document.querySelector('#menu').addEventListener('click',()=>{
       closeMenuSpan();
     });
   }else if(countClick==2){
-    closeMenuSpan();
     setTimeout(()=>{
       document.querySelector('body > div').remove();
       countClick=0;
     },70);
+    closeMenuSpan();
   }
   console.log('click');
 });
