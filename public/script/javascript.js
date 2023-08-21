@@ -112,6 +112,7 @@ document.querySelector('#menu').addEventListener('click',()=>{
       z-index:0;
       background:white;
       flex-direction:column;
+      right:0;
       `
     },70);
     document.querySelector('body > .openMenu').addEventListener('click',()=>{
