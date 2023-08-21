@@ -45,11 +45,11 @@ white-space: nowrap;
   }
   header nav ul li span{
   /* margin:1px; */
-white-space: nowrap;
-/* display:block; */
+  white-space: nowrap;
+  /* display:block; */
   }
   header nav ul li a{
-    color:black;
+      color:black;
       /* text-decoration:underline; */
       position: relative;
     	color: #00000;
@@ -149,7 +149,6 @@ header nav ul li a:focus:after {
   }
   @media(max-width:700px){
     .images > .fivePhoto > .line > img{
-
       width:100%;
       }
       .line{
@@ -159,7 +158,7 @@ header nav ul li a:focus:after {
   }
 
   /* плавное подчеркиваниен ссылки с лева на право */
-  .images > .fivePhoto > .line > span:hover{
+  .images > .fivePhoto > .line > span{
     /* text-decoration: underline; */
     position: relative;
   	color: black; /*задаём цвет ссылки*/
@@ -167,7 +166,7 @@ header nav ul li a:focus:after {
   	line-height: 1; /*задаём высоту строки*/
   	text-decoration: none; /*убираем подчёркивание*/
   }
-  .images > .fivePhoto > .line > span:after {
+  .images > .fivePhoto > .line > span:after{
 	display: block;
 	position: absolute;
 	left: 0; /*изменить на right:0;, чтобы изменить направление подчёркивания */
@@ -182,8 +181,27 @@ header nav ul li a:focus:after {
 	width: 100%; /*устанавливаем значение 100% чтобы ссылка подчёркивалась полностью*/
 }
   /*useless*/
-  .images > .fivePhoto > .line > img:hover{
-    /* text-decoration: underline; */
+  .images > .fivePhoto > .line{
+    text-decoration: underline;
+    position: relative;
+    color: black;
+    cursor: pointer;
+    line-height: 1;
+    text-decoration: none;
+  }
+  .images > .fivePhoto > .line:after{
+    display: block;
+  	position: absolute;
+  	left: 0; /*изменить на right:0;, чтобы изменить направление подчёркивания */
+  	width: 0;/*задаём длинну линии до наведения курсора*/
+  	height: 2px; /*задаём ширину линии*/
+  	background-color: black; /*задаём цвет линии*/
+  	content: "";
+  	transition: width 0.3s ease-out; /*задаём время анимации*/
+  }
+  .images > .fivePhoto > .line:hover:after,
+  .images > .fivePhoto > .line:focus:after {
+  	width: 100%; /*устанавливаем значение 100% чтобы ссылка подчёркивалась полностью*/
   }
   @media(max-width:1000px){
     .images > .fivePhoto > .line > img{
