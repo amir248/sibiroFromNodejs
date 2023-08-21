@@ -1,4 +1,5 @@
 function closeMenuSpan(){
+  console.log(countClick);
   document.querySelector('#menu > span:nth-child(2)').style.cssText=`
   transition: all 1s ease-out;width:37px;height:3px;background:black;display:block;margin-top:17%;margin-bottom:17%;margin-right:17px;
   `;
@@ -8,11 +9,28 @@ function closeMenuSpan(){
   document.querySelector('#menu > span:nth-child(3)').style.cssText=`
   transition: all 1s ease-out;width:37px;height:3px;background:black;display:block
   `;
-  document.querySelector('body > div').style.cssText=`
-  width:1px;
-  transition: all 1s ease-out;
-  opacity:0;
+  document.querySelector('body > .openMenu').style.cssText=`
+    display:flex;
+    position:fixed;
+    justify-content:center;
+    align-items:center;
+
+    height:100vh;
+    // background:;
+    top:100;
+    z-index:0;
+    background:white;
+    flex-direction:column;
+    opacity:0;
+    transition: all 0.7s ease-out;
+
   `;
+  // document.querySelector('body > .openMenu').className=`closeMenu`;
+  // document.querySelector('body > .openMenu').style.cssText=`
+  // width:1px;
+  // transition: all 1s ease-out;
+  // opacity:0;
+  // `;
 }
 if(innerWidth<700){
   let menu=document.createElement('p');
@@ -31,7 +49,7 @@ if(innerWidth<700){
   document.querySelector('#menu').prepend(spanThree);
 }else{
   console.log('thre');
-  if(document.querySelector('body > div')==true){
+  if(document.querySelector('body > .openMenu')==true){
     console.log('body > div TRUE');
   }
 }
@@ -70,72 +88,75 @@ document.querySelector('#menu').addEventListener('click',()=>{
     margin-right:17px;
     `;
     let newBox=document.createElement('div');
-    newBox.className='openMenu';
     newBox.innerHTML=`
     <h1 id="ok-menu">ok</h1>
     <h1 id="photo-menu">photo</h1>
     <h1 id="home-menu">home</h1>
     <h1 id="footer-menu">footer</h1>
     `;
-    setInterval(()=>{
-      newBox.style.cssText=`
+    document.querySelector('body').append(newBox);
+    console.log(countClick +" on set INterval");
+    newBox.className='openMenu';
+    setTimeout(()=>{
+      document.querySelector('body > .openMenu').style.cssText=`
+      transition: all 1s ease-out;
       opacity:1;
       width:100%;
-      transition: all 1s ease-out;
       display:flex;
       position:fixed;
       justify-content:center;
       align-items:center;
       height:100vh;
       // background:black;
-      top:0;
+      // bottom:0;
       z-index:0;
       background:white;
       flex-direction:column;
       `
-    },300);
-    document.querySelector('body').append(newBox);
+    },70);
     document.querySelector('body > .openMenu').addEventListener('click',()=>{
       closeMenuSpan();
-      // document.querySelector('body > div').remove();
-      document.querySelector('body > .openMenu').remove();
+      setTimeout(()=>{
+        // document.querySelector('body > div').remove();
+        document.querySelector('body > .openMenu').remove();
+      },300);
       countClick=0;
     });
     document.querySelector('#ok-menu').addEventListener('click',()=>{
+      closeMenuSpan();
       console.log('ok');
       window.location.href='#oks';
-      closeMenuSpan();
     });
     document.querySelector('#footer-menu').addEventListener('click',()=>{
+      closeMenuSpan();
       console.log('footer');
       window.location.href='#footer';
-      closeMenuSpan();
     });
     document.querySelector('#home-menu').addEventListener('click',()=>{
+      closeMenuSpan();
       console.log('home');
       window.location.href='';
       window.scroll(0,0);
-      closeMenuSpan();
     });
     document.querySelector('#photo-menu').addEventListener('click',()=>{
+      closeMenuSpan();
       console.log('photo');
       window.location.href='#photos';
-      closeMenuSpan();
     });
   }else if(countClick==2){
+    closeMenuSpan();
     setTimeout(()=>{
       document.querySelector('body > .openMenu').remove();
       countClick=0;
-      closeMenuSpan();
-    },70);
+    },700);
   }
-  console.log('click');
+  console.log('click '+countClick);
 });
-function displayWidth(){
-    console.log('oooK');
-}
-window.addEventListener('DOMContentLoaded',displayWidth);
-setInterval(displayWidth,7000);
+// function displayWidth(){
+//     console.log('oooK');
+// }
+// window.addEventListener('DOMContentLoaded',displayWidth);
+// setInterval(displayWidth,7000);
 
 //inscription more photos click flipping
 let clickFlipping=document.createElement('span');

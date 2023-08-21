@@ -524,7 +524,23 @@ body > main:nth-child(2) > button:nth-child(4){
   align-items:center;
   // width:100%;
   width:0px;
-  height:100vh;
+  height:0vh;
+  /* background:black; */
+  top:0;
+  z-index:0;
+  background:white;
+  flex-direction:column;
+  opacity:0;
+  transition: all 1s ease-out;
+}
+.closeMenu{
+  display:flex;
+  position:fixed;
+  justify-content:center;
+  align-items:center;
+  /* // width:100%; */
+  width:0px;
+  height:0vh;
   background:black;
   top:0;
   z-index:0;
