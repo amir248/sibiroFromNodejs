@@ -182,7 +182,7 @@ header nav ul li a:focus:after {
 }
   /*useless*/
   .images > .fivePhoto > .line{
-    text-decoration: underline;
+    /* text-decoration: underline; */
     position: relative;
     color: black;
     cursor: pointer;
