@@ -48,9 +48,37 @@ white-space: nowrap;
 white-space: nowrap;
 /* display:block; */
   }
-  header nav ul li:hover{
-      text-decoration:underline;
+  header nav ul li a{
+    color:black;
+      /* text-decoration:underline; */
+      position: relative;
+    	color: #00000;
+    	cursor: pointer;
+    	line-height: 1;
+    	text-decoration: none;
+      transition: width 0.3s ease-out;
   }
+  header nav ul li a:after{
+    display: block;
+  	position: absolute;
+    center:0;
+  	left: 0;
+    right:0;
+  	width: 0;
+  	height: 2px; /*задаём ширину линии*/
+  	background-color: #000000;
+  	content: "";
+  	transition: width 0.3s ease-out;
+  }
+  /* header nav ul li:hover:after,
+  header nav ul li:focus:after {
+	width: 100%;
+} */
+header nav ul li a:hover:after,
+header nav ul li a:focus:after {
+  transition: width 0.3s ease-out;
+	width: 100%; /*устанавливаем значение 100% чтобы ссылка подчёркивалась полностью*/
+}
   header nav ul{
     max-width:930px;
     float:right;
@@ -111,6 +139,10 @@ white-space: nowrap;
     padding:0.1%;
     margin:0.3%;
   }
+
+  .line:hover span{
+    text-decoration: underline;
+  }
   .images > .fivePhoto > .line > img{
     width:230px;
     height:350px;
@@ -125,12 +157,33 @@ white-space: nowrap;
         padding:0;
       }
   }
+
+  /* плавное подчеркиваниен ссылки с лева на право */
   .images > .fivePhoto > .line > span:hover{
-    text-decoration: underline;
+    /* text-decoration: underline; */
+    position: relative;
+  	color: black; /*задаём цвет ссылки*/
+  	cursor: pointer;
+  	line-height: 1; /*задаём высоту строки*/
+  	text-decoration: none; /*убираем подчёркивание*/
   }
+  .images > .fivePhoto > .line > span:after {
+	display: block;
+	position: absolute;
+	left: 0; /*изменить на right:0;, чтобы изменить направление подчёркивания */
+	width: 0;/*задаём длинну линии до наведения курсора*/
+	height: 2px; /*задаём ширину линии*/
+	background-color: black; /*задаём цвет линии*/
+	content: "";
+	transition: width 0.3s ease-out; /*задаём время анимации*/
+}
+.images > .fivePhoto > .line > span:hover:after,
+.images > .fivePhoto > .line > span:focus:after {
+	width: 100%; /*устанавливаем значение 100% чтобы ссылка подчёркивалась полностью*/
+}
   /*useless*/
   .images > .fivePhoto > .line > img:hover{
-    text-decoration: underline;
+    /* text-decoration: underline; */
   }
   @media(max-width:1000px){
     .images > .fivePhoto > .line > img{
@@ -407,9 +460,7 @@ body > main:nth-child(2) > button:nth-child(4){
      margin:3%;
    }
    footer li{
-
-list-style-type: none; /* Убираем маркеры */
-
+     list-style-type: none; /* Убираем маркеры */
    }
    li > a > img{
      width:37px;
