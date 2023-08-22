@@ -94,6 +94,7 @@ document.querySelector('#menu').addEventListener('click',()=>{
     <h1 id="home-menu">home</h1>
     <h1 id="footer-menu">footer</h1>
     <h1><span>Call me:</span><br><a href='tel:+79137870404' style='color:black;text-decoration:none;'>+7 913 787 04 04</a></h1>
+    <h1>Site copyring
     `;
     document.querySelector('body').append(newBox);
     console.log(countClick +" on set INterval");
@@ -185,3 +186,33 @@ document.querySelector('.fivePhoto > .line > img').addEventListener('click',()=>
   }
   document.querySelector('.fivePhoto > .line > img').setAttribute('src',arrayFirstGallery[firstGalleryCountClick]);
 });
+
+
+//----------------------------------------
+// big script with intersection Observer
+//----------------------------------------
+const lazyImages = document.querySelectorAll('.lazy-image')
+
+const callback = (entries, observer) => {
+
+  entries.forEach((entry) => {
+
+    if (entry.isIntersecting) {
+      console.log('Пользователь почти докрутил до картинки!');
+
+      entry.target.src = entry.target.dataset.src
+      document.querySelector('.lazy-image > img:nth-child(1)').setAttribute('src','#');
+      observer.unobserve(entry.target)
+    }
+  })
+}
+
+const options = {
+  // root: по умолчанию window, но можно задать любой элемент-контейнер
+  rootMargin: '0px 0px 75px 0px',
+  threshold: [0.75, 1],
+}
+
+const observer = new IntersectionObserver(callback, options)
+
+lazyImages.forEach((image) => observer.observe(image))
