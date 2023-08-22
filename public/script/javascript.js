@@ -93,6 +93,7 @@ document.querySelector('#menu').addEventListener('click',()=>{
     <h1 id="photo-menu">photo</h1>
     <h1 id="home-menu">home</h1>
     <h1 id="footer-menu">footer</h1>
+    <h1><span>Call me:</span><br><a href='tel:+79137870404' style='color:black;text-decoration:none;'>+7 913 787 04 04</a></h1>
     `;
     document.querySelector('body').append(newBox);
     console.log(countClick +" on set INterval");
