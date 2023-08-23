@@ -270,7 +270,7 @@ header nav ul li a:focus:after {
     margin-top:1%;
     justify-content: space-around;
     align-items: flex-start;
-    height:115px;
+    /* height:115px; */
     min-height: 115px;
   }
 
@@ -439,8 +439,12 @@ body > main:nth-child(2) > button:nth-child(4){
       max-width: 700px;
       height:450px;
     } */
+    .map{
+      width:700px;
+      height:100%;
+    }
 @media(max-width:700px){
-  .map > iframe:nth-child(1){
+  .map{
   width:100%;
   max-width: 700px;
   }

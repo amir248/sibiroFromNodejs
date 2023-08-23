@@ -239,7 +239,7 @@ const callback = (entries, observer) => {
 const options = {
   // root: по умолчанию window, но можно задать любой элемент-контейнер
   rootMargin: '0px 0px 5px 0px',
-  threshold: [0.1, 1],
+  threshold: [0.17, 1],
 }
 
 const observer = new IntersectionObserver(callback, options)
