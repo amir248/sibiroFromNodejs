@@ -191,20 +191,38 @@ document.querySelector('.fivePhoto > .line > img').addEventListener('click',()=>
 //----------------------------------------
 // big script with intersection Observer
 //----------------------------------------
-const lazyImages = document.querySelectorAll('.lazy-image')
+const lazyImages = document.querySelectorAll('.lazy-image');
+const lazyImagesTwo = document.querySelectorAll('.lazy-imageTwo');
 
 const callback = (entries, observer) => {
 
   entries.forEach((entry) => {
 
     if (entry.isIntersecting) {
+
       console.log('Пользователь почти докрутил до картинки!');
 
-      entry.target.src = entry.target.dataset.src
-      document.querySelector('.lazy-image > img:nth-child(1)').setAttribute('src','#');
-      observer.unobserve(entry.target)
-    }
-  })
+      document.querySelector('.lazy-imageTwo').style.cssText=`
+        opacity:1;
+        margin-left:0px;
+      `;
+      document.querySelector('.lazy-image > img:nth-child(1)').style.cssText=`margin-left: 0px;opacity:1`;
+
+      // entry.target.src = entry.target.dataset.src
+      // observer.unobserve(entry.target)
+    // }else{
+    //
+    //         document.querySelector('.lazy-imageTwo').style.cssText=`
+    //           opacity:0;
+    //           margin-left:-330px;
+    //         `;
+    //         document.querySelector('.lazy-image > img:nth-child(1)').style.cssText=`margin-left: 330px;opacity:0`;
+  }else{
+    console.log('bye');
+    document.querySelector('.lazy-image > img:nth-child(1)').style.cssText=`background:green;`;
+    document.querySelector('.lazy-imageTwo').style.cssText=`opacity:0;margin-left:330px;`
+  }
+  });
 }
 
 const options = {
@@ -215,4 +233,5 @@ const options = {
 
 const observer = new IntersectionObserver(callback, options)
 
-lazyImages.forEach((image) => observer.observe(image))
+lazyImages.forEach((image) => observer.observe(image));
+lazyImagesTwo.forEach((image) => observer.observe(image));
