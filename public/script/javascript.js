@@ -230,7 +230,7 @@ const callback = (entries, observer) => {
 
     document.querySelector('body > main:nth-child(2) > div:nth-child(2) > div:nth-child(1) > img:nth-child(1)').style.cssText=`opacity:0;margin-left:330px;`;
 
-  document.querySelector('body > main:nth-child(2) > section:nth-child(7) > div:nth-child(1) > div:nth-child(1) > img:nth-child(1)').style.cssText='opacity:0;margin-left:-350px;'
+  document.querySelector('body > main:nth-child(2) > section:nth-child(7) > div:nth-child(1) > div:nth-child(1) > img:nth-child(1)').style.cssText='opacity:0;margin-left:-330px;'
 
   }
   });
