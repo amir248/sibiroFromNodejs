@@ -5,8 +5,11 @@
 }
 
 
-
-
+.lazy-imageThree{
+  opacity:0;
+  margin-left: 330px;
+  transition: all 0.7s ease-out 0.3s;
+}
 
 
 

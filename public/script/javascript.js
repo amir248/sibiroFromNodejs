@@ -193,6 +193,7 @@ document.querySelector('.fivePhoto > .line > img').addEventListener('click',()=>
 //----------------------------------------
 const lazyImages = document.querySelectorAll('.lazy-image');
 const lazyImagesTwo = document.querySelectorAll('.lazy-imageTwo');
+const lazyImagesThree = document.querySelectorAll('.lazy-imageThree');
 
 const callback = (entries, observer) => {
 
@@ -201,12 +202,18 @@ const callback = (entries, observer) => {
     if (entry.isIntersecting) {
 
       console.log('Пользователь почти докрутил до картинки!');
-
-      document.querySelector('.lazy-imageTwo').style.cssText=`
+      setTimeout(()=>{
+        document.querySelector('.lazy-imageTwo').style.cssText=`
+        opacity:1;
+        margin-left:0px;
+        `;
+      },100);
+      document.querySelector('body > main:nth-child(2) > div:nth-child(2) > div:nth-child(1) > img:nth-child(1)').style.cssText=`
         opacity:1;
         margin-left:0px;
       `;
-      document.querySelector('.lazy-image > img:nth-child(1)').style.cssText=`margin-left: 0px;opacity:1`;
+
+      document.querySelector('body > main:nth-child(2) > section:nth-child(7) > div:nth-child(1) > div:nth-child(1) > img:nth-child(1)').style.cssText=`margin-left: 0px;opacity:1`;
 
       // entry.target.src = entry.target.dataset.src
       // observer.unobserve(entry.target)
@@ -219,8 +226,12 @@ const callback = (entries, observer) => {
     //         document.querySelector('.lazy-image > img:nth-child(1)').style.cssText=`margin-left: 330px;opacity:0`;
   }else{
     console.log('bye');
-    document.querySelector('.lazy-image > img:nth-child(1)').style.cssText=`background:green;`;
-    document.querySelector('.lazy-imageTwo').style.cssText=`opacity:0;margin-left:330px;`
+    document.querySelector('.lazy-imageTwo').style.cssText=`opacity:0;margin-left:330px;`;
+
+    document.querySelector('body > main:nth-child(2) > div:nth-child(2) > div:nth-child(1) > img:nth-child(1)').style.cssText=`opacity:0;margin-left:330px;`;
+
+  document.querySelector('body > main:nth-child(2) > section:nth-child(7) > div:nth-child(1) > div:nth-child(1) > img:nth-child(1)').style.cssText='opacity:0;margin-left:-350px;'
+
   }
   });
 }
@@ -235,3 +246,4 @@ const observer = new IntersectionObserver(callback, options)
 
 lazyImages.forEach((image) => observer.observe(image));
 lazyImagesTwo.forEach((image) => observer.observe(image));
+lazyImagesThree.forEach((image) => observer.observe(image));
