@@ -226,7 +226,7 @@ const callback = (entries, observer) => {
     //         document.querySelector('.lazy-image > img:nth-child(1)').style.cssText=`margin-left: 330px;opacity:0`;
   }else{
     console.log('bye');
-    document.querySelector('.lazy-imageTwo').style.cssText=`opacity:0;margin-left:330px;`;
+    document.querySelector('.lazy-imageTwo').style.cssText=`opacity:0;margin-left:230px;`;
 
     document.querySelector('body > main:nth-child(2) > div:nth-child(2) > div:nth-child(1) > img:nth-child(1)').style.cssText=`opacity:0;margin-left:330px;`;
 
@@ -238,8 +238,8 @@ const callback = (entries, observer) => {
 
 const options = {
   // root: по умолчанию window, но можно задать любой элемент-контейнер
-  rootMargin: '0px 0px 75px 0px',
-  threshold: [0.75, 1],
+  rootMargin: '0px 0px 5px 0px',
+  threshold: [0.17, 1],
 }
 
 const observer = new IntersectionObserver(callback, options)
