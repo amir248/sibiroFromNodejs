@@ -139,7 +139,40 @@ header nav ul li a:focus:after {
     padding:0.1%;
     margin:0.3%;
   }
-
+@media(max-width:230px){
+  .line{
+    width:100%;
+    padding:0;
+    margin:0;
+  }
+  .line > img{
+    border-radius: 17px;
+    padding:0;
+    margin:0;
+  }
+  div.line:nth-child(1) > img:nth-child(1){
+    width:100%;
+    /* min-width:700px; */
+    /* border-radius: 17px; */
+  }
+}
+@media(max-width:700px){
+  .line{
+    width:100%;
+    padding:0;
+    margin:0;
+  }
+  .line > img{
+    border-radius: 7px;
+    padding:0;
+    margin:0;object-fit: cover;
+  }
+  div.line:nth-child(1) > img:nth-child(1){
+    width:100%;
+    /* min-width:700px; */
+    /* border-radius: 17px; */
+  }
+}
   .line:hover span{
     text-decoration: underline;
   }
