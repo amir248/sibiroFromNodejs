@@ -1,15 +1,17 @@
-function closeMenuSpan(){
-  console.log(countClick);
-  document.querySelector('#menu > span:nth-child(2)').style.cssText=`
-  transition: all 1s ease-out;width:37px;height:3px;background:black;display:block;margin-top:17%;margin-bottom:17%;margin-right:17px;
-  `;
-  document.querySelector('#menu > span:nth-child(1)').style.cssText=`
-  transition: all 1s ease-out;width:37px;height:3px;background:black;display:block;
-  `;
-  document.querySelector('#menu > span:nth-child(3)').style.cssText=`
-  transition: all 1s ease-out;width:37px;height:3px;background:black;display:block
-  `;
-  document.querySelector('body > .openMenu').style.cssText=`
+
+function menuOpenClose(){
+  function closeMenuSpan(){
+    console.log(countClick);
+    document.querySelector('#menu > span:nth-child(2)').style.cssText=`
+    transition: all 1s ease-out;width:37px;height:3px;background:black;display:block;margin-top:17%;margin-bottom:17%;margin-right:17px;
+    `;
+    document.querySelector('#menu > span:nth-child(1)').style.cssText=`
+    transition: all 1s ease-out;width:37px;height:3px;background:black;display:block;
+    `;
+    document.querySelector('#menu > span:nth-child(3)').style.cssText=`
+    transition: all 1s ease-out;width:37px;height:3px;background:black;display:block
+    `;
+    document.querySelector('body > .openMenu').style.cssText=`
     display:flex;
     position:fixed;
     justify-content:center;
@@ -24,49 +26,53 @@ function closeMenuSpan(){
     opacity:0;
     transition: all 0.7s ease-out;
 
-  `;
-  // document.querySelector('body > .openMenu').className=`closeMenu`;
-  // document.querySelector('body > .openMenu').style.cssText=`
-  // width:1px;
-  // transition: all 1s ease-out;
-  // opacity:0;
-  // `;
-}
-if(innerWidth<700){
-  let menu=document.createElement('p');
-  menu.setAttribute('id','menu');
-  menu.style.cssText=`z-index:9;position:fixed;top:17px;`;
-  document.querySelector('nav').prepend(menu);
-
-  let spanOne=document.createElement('span');
-  spanOne.style.cssText=`transition: all 1s ease-out;width:37px;height:3px;background:black;display:block;`;
-  document.querySelector('#menu').prepend(spanOne);
-  let spanTwo=document.createElement('span');
-  spanTwo.style.cssText=`transition: all 1s ease-out;width:37px;height:3px;background:black;display:block;margin-top:17%;margin-bottom:17%;margin-right:17px;`;
-  document.querySelector('#menu').prepend(spanTwo);
-  let spanThree=document.createElement('span');
-  spanThree.style.cssText=`transition: all 1s ease-out;width:37px;height:3px;background:black;display:block`;
-  document.querySelector('#menu').prepend(spanThree);
-}else{
-  console.log('thre');
-  if(document.querySelector('body > .openMenu')==true){
-    console.log('body > div TRUE');
-  }
-}
-let countClick=+0;
-document.querySelector('#menu').addEventListener('click',()=>{
-  countClick++;
-  if(countClick==1){
-    document.querySelector('#menu > span:nth-child(2)').style.cssText=`
-    margin-bottom:0;
-    margin-top:0;
-    display:none;
-    margin:0;
-    transition: all 1s ease-out;
-    opacity:0;
-    margin-right:17px;
     `;
-    document.querySelector('#menu > span:nth-child(1)').style.cssText=`
+    // document.querySelector('body > .openMenu').className=`closeMenu`;
+    // document.querySelector('body > .openMenu').style.cssText=`
+    // width:1px;
+    // transition: all 1s ease-out;
+    // opacity:0;
+    // `;
+  }
+  if(innerWidth<700){
+    let menu=document.createElement('p');
+    menu.setAttribute('id','menu');
+    menu.style.cssText=`z-index:9;position:fixed;top:17px;`;
+    document.querySelector('nav').prepend(menu);
+
+    let spanOne=document.createElement('span');
+    spanOne.style.cssText=`transition: all 1s ease-out;width:37px;height:3px;background:black;display:block;`;
+    document.querySelector('#menu').prepend(spanOne);
+    let spanTwo=document.createElement('span');
+    spanTwo.style.cssText=`transition: all 1s ease-out;width:37px;height:3px;background:black;display:block;margin-top:17%;margin-bottom:17%;margin-right:17px;`;
+    document.querySelector('#menu').prepend(spanTwo);
+    let spanThree=document.createElement('span');
+    spanThree.style.cssText=`transition: all 1s ease-out;width:37px;height:3px;background:black;display:block`;
+    document.querySelector('#menu').prepend(spanThree);
+
+  }else{
+    console.log('thre');
+    if(document.querySelector('body > .openMenu')==true){
+      console.log('body > div TRUE');
+    }
+  }
+  let countClick=+0;
+
+
+  console.log('menuOpenClose');
+  document.querySelector('#menu').addEventListener('click',()=>{
+    countClick++;
+    if(countClick==1){
+      document.querySelector('#menu > span:nth-child(2)').style.cssText=`
+      margin-bottom:0;
+      margin-top:0;
+      display:none;
+      margin:0;
+      transition: all 1s ease-out;
+      opacity:0;
+      margin-right:17px;
+      `;
+      document.querySelector('#menu > span:nth-child(1)').style.cssText=`
       transition: all 1s ease-out;
       width:45px;
       height:3px;
@@ -77,84 +83,147 @@ document.querySelector('#menu').addEventListener('click',()=>{
       margin-right:17px;
       margin-top:17px;
 
-    `;
-    document.querySelector('#menu > span:nth-child(3)').style.cssText=`
-    transition: all 1s ease-out;
-    width:45px;
-    height:3px;
-    background:black;
-    display:block;
-    transform: rotate(-50deg);
-    margin-right:17px;
-    `;
-    let newBox=document.createElement('div');
-    newBox.innerHTML=`
-    <h1 id="ok-menu">ok</h1>
-    <h1 id="photo-menu">photo</h1>
-    <h1 id="home-menu">home</h1>
-    <h1 id="footer-menu">footer</h1>
-    <h1><span>Call me:</span><br><a href='tel:+79137870404' style='color:black;text-decoration:none;'>+7 913 787 04 04</a></h1>
-    <h1>Site copyring
-    `;
-    document.querySelector('body').append(newBox);
-    console.log(countClick +" on set INterval");
-    newBox.className='openMenu';
-    setTimeout(()=>{
-      document.querySelector('body > .openMenu').style.cssText=`
+      `;
+      document.querySelector('#menu > span:nth-child(3)').style.cssText=`
       transition: all 1s ease-out;
-      opacity:1;
-      width:100%;
-      display:flex;
-      position:fixed;
-      justify-content:center;
-      align-items:center;
-      height:100vh;
-      // background:black;
-      // bottom:0;
-      z-index:0;
-      background:white;
-      flex-direction:column;
-      right:0;
-      `
-    },70);
-    document.querySelector('body > .openMenu').addEventListener('click',()=>{
+      width:45px;
+      height:3px;
+      background:black;
+      display:block;
+      transform: rotate(-50deg);
+      margin-right:17px;
+      `;
+      let newBox=document.createElement('div');
+      newBox.innerHTML=`
+      <h1 id="ok-menu">ok</h1>
+      <h1 id="photo-menu">photo</h1>
+      <h1 id="home-menu">home</h1>
+      <h1 id="footer-menu">footer</h1>
+      <h1><span>Call me:</span><br><a href='tel:+79137870404' style='color:black;text-decoration:none;'>+7 913 787 04 04</a></h1>
+      <h1>Black themes<input type="checkbox" id="themes"></h1>
+      `;
+      document.querySelector('body').append(newBox);
+      console.log(countClick +" on set INterval");
+      newBox.className='openMenu';
+      setTimeout(()=>{
+        document.querySelector('body > .openMenu').style.cssText=`
+        transition: all 1s ease-out;
+        opacity:1;
+        width:100%;
+        display:flex;
+        position:fixed;
+        justify-content:center;
+        align-items:center;
+        height:100vh;
+        // background:black;
+        // bottom:0;
+        z-index:0;
+        background:white;
+        flex-direction:column;
+        right:0;
+        `
+      },70);
+      document.querySelector('body > .openMenu').addEventListener('click',()=>{
+        closeMenuSpan();
+        setTimeout(()=>{
+          // document.querySelector('body > div').remove();
+          document.querySelector('body > .openMenu').remove();
+        },300);
+        countClick=0;
+      });
+      document.querySelector('#ok-menu').addEventListener('click',()=>{
+        closeMenuSpan();
+        console.log('ok');
+        window.location.href='#oks';
+      });
+      document.querySelector('#footer-menu').addEventListener('click',()=>{
+        closeMenuSpan();
+        console.log('footer');
+        window.location.href='#footer';
+      });
+      document.querySelector('#home-menu').addEventListener('click',()=>{
+        closeMenuSpan();
+        console.log('home');
+        window.location.href='';
+        window.scroll(0,0);
+      });
+      document.querySelector('#photo-menu').addEventListener('click',()=>{
+        closeMenuSpan();
+        console.log('photo');
+        window.location.href='#photos';
+      });
+    }else if(countClick==2){
       closeMenuSpan();
       setTimeout(()=>{
-        // document.querySelector('body > div').remove();
         document.querySelector('body > .openMenu').remove();
-      },300);
-      countClick=0;
-    });
-    document.querySelector('#ok-menu').addEventListener('click',()=>{
-      closeMenuSpan();
-      console.log('ok');
-      window.location.href='#oks';
-    });
-    document.querySelector('#footer-menu').addEventListener('click',()=>{
-      closeMenuSpan();
-      console.log('footer');
-      window.location.href='#footer';
-    });
-    document.querySelector('#home-menu').addEventListener('click',()=>{
-      closeMenuSpan();
-      console.log('home');
-      window.location.href='';
-      window.scroll(0,0);
-    });
-    document.querySelector('#photo-menu').addEventListener('click',()=>{
-      closeMenuSpan();
-      console.log('photo');
-      window.location.href='#photos';
-    });
-  }else if(countClick==2){
-    closeMenuSpan();
-    setTimeout(()=>{
-      document.querySelector('body > .openMenu').remove();
-      countClick=0;
-    },700);
-  }
-  console.log('click '+countClick);
-});
+        countClick=0;
+      },700);
+    }
+    // it's a menu opening mistake - menu opening
+
+    console.log('click '+countClick);
+    //--------------------------------------------------------
+    //-------------------Black themes-------------------------
+    //--------------------------------------------------------
+    console.log(countClick);
+    const blackThemes={
+      color: "white"
+    };
+    // document.querSelector('#themes').addEventListener('click',()=>{
+      //   if(localStorage.themes='black'){
+        //     conssole.log('CLICCKKKKKK');
+        //
+        //   }else if(localStorage.themes='white'){
+          //     console.log('CLIDCK WHITE');
+          //   }else{
+            //     console.log('CLIDCK else');
+            //
+            //   }
+            //   clickThemes();
+            //   localStorage.setItem('themes',`${blackThemes.color}`);
+            // });
+            // localStorage.setItem('test', 1);
+
+            // blackThemes.color='black';
+            localStorage.themes='black';
+            function clickThemes(){
+              if(countClick==1){
+                if(document.querySelector('#themes').checked==true){
+                  blackThemes.color="black";
+                  // localStorage.themes='black';
+                  localStorage.setItem('themes',`${blackThemes.color}`);
+                  console.log(blackThemes.color);
+                }else{
+                  localStorage.setItem('themes',`${blackThemes.color}`);
+                  console.log(blackThemes.color);
+                }
+              }
+            }
+
+            if(document.querySelector('#themes').checked==true){
+              console.log('BLACK');
+            }
+            if(localStorage.themes=="black"){
+              console.log(!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1);
+            }
+
+            if(blackThemes.themes=='black'){
+              document.querySelector('body').style.cssText=`
+              background:black;
+              color:white;
+              `;
+              document.querySelector('.buttonOnNextPhoto > button:nth-child(1)').style.cssText=`color:black;background:white;border:1px solid black;`;
+            }else{
+              console.log("ELSE");
+            }
+          });//addEventListener Click Menu
+}//menuOpenClose
+if(window.innerWidth>700){
+  console.log('loloooo');
+}else{
+
+  menuOpenClose();
+}
 // function displayWidth(){
 //     console.log('oooK');
 // }
