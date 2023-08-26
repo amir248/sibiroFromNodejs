@@ -49,12 +49,12 @@ function blackWhite(){
   };
   if(localStorage.themes=='white'){
     // console.log('themes-CHECKBOX---TRUE');
-    // localStorage.setItem('themes','black');
+    localStorage.setItem('themes','black');
     localStorage.themes='black';
   }else{
     console.log('themes-BLACK---TRUE');
     // localStorage.themes=='thite';
-    // localStorage.setItem('themes','white');
+    localStorage.setItem('themes','white');
 
   }
 }
