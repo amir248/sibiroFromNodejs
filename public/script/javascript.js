@@ -1,7 +1,43 @@
-const state = {
-  checkbox: "false"
-};
-console.log('click '+state);
+const state={};
+if(localStorage.themes=='black'){
+  state.checkbox="true";
+    state.line="white";
+
+}else{
+
+    state.checkbox="false";
+    state.line="black";
+
+}
+// console.log('click '+state);
+window.addEventListener('DOMContentLoaded',()=>{
+  console.log('DOMContentLoaded');
+  if(localStorage.themes=='black'){
+      blackWhite();
+    }else{
+        // blackWhite();
+        console.log("ELSE!!!!!!!!!!!!!!!!!!!!!!!!!");
+
+      }
+})
+function mutation(){
+  if(localStorage.themes=='white'){
+    localStorage.themes='black';
+    console.log('localStorage.theme WHITE--and '+state.checkbox);
+  }else if(localStorage.themes=='black'){
+    console.log('localStorage.themes BLACK');
+    localStorage.themes='white';
+    // if(state.countClick==1){
+    //   document.querSelector('checkbox').addEventListener('click',()=>{
+    //     console.log('oKkk');
+    //   });
+    // }
+  }else{
+    console.log('localStorage.ELSE');
+  }
+
+}
+
 function blackWhite(){
   //--------------------------------------------------------
   //-------------------Black themes-------------------------
@@ -12,7 +48,7 @@ function blackWhite(){
     state.line='yellow';
     console.log('blackThemes'+"_"+state.countClick);
     // window.addEventListener('')
-    if(state.countClick==1){
+    if(state.countClick==2){
       document.querSelector('.openMenu').style.sccText=`
       background:balck;color:white;
       `;
@@ -44,25 +80,50 @@ function blackWhite(){
     state.color='violet';
     state.line='black';
   }
-  const blackThemes={
-    color: "white"
-  };
-  if(localStorage.themes=='white'){
-    // console.log('themes-CHECKBOX---TRUE');
-    localStorage.setItem('themes','black');
-    localStorage.themes='black';
-  }else{
-    console.log('themes-BLACK---TRUE');
-    // localStorage.themes=='thite';
-    localStorage.setItem('themes','white');
+  // const blackThemes={
+  //   color: "white"
+  // };
+  // if(localStorage.themes=='white'){
+  //   // console.log('themes-CHECKBOX---TRUE');
+  //   // localStorage.setItem('themes','black');
+  //   // localStorage.themes='black';
+  // }else{
+  //   console.log('themes-BLACK---TRUE');
+  //   // localStorage.themes=='thite';
+  //   // localStorage.setItem('themes','white');
+  //
+  // }
+};
 
-  }
-}
-blackWhite();
+
+// console.log(state);
+// if(state.checkbox==false){
+//   document.querySelector('#themes').addEventListener('click',()=>{
+//     console.log('\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\');
+//     blackWhite();
+//     state.checkbox==true;
+//   });
+//
+// }else{
+//   if(state.checkbox==true){
+//     console.log('CHECKBOX TRUE-0------');
+//   }else{
+//     blackWhite();
+//
+//   }
+//   // document.querySelector('#themes').addEventListener('click',()=>{
+//   //   console.log('\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\');
+//   // });
+// }
 function intersectionObserverClick(){
   console.log('intersectionObserverClick');
     let observerS = new MutationObserver(mutationRecords => {
       console.log(mutationRecords); // console.log(изменения)
+      document.querySelector('#themes').addEventListener('click',()=>{
+        console.log('99999999');
+        localStorage.themes='black';
+        window.location.href='/';
+      });
     });
 
     // наблюдать за всем, кроме атрибутов
@@ -71,74 +132,82 @@ function intersectionObserverClick(){
       subtree: true, // и более глубокими потомками
       characterDataOldValue: true // передавать старое значение в колбэк
     });
+mutation();
+
     if(document.querySelector('#themes').checked==true){
-      state.checkbox="true";
-      localStorage.themes=='black';
+      // state.checkbox="false";
+      blackWhite();
+      // localStorage.themes=='black';
       console.log('oK');
       console.log(state);
+    // }else if(document.querSelector('#themes').checked==false){
+    //   blackWhite();
+    //   state.checkbox='true';
     }else{
-      localStorage.themes='white';
-      state.checkbox='false';
+      // localStorage.themes='white';
+      // blackWhite();
+      // state.checkbox='true';
+      console.log(state);
     }
 }//intersectionObserver
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-if(state.countClick==1){
-  // state.line='orange';
-  setTimeout(()=>{
-    console.log(localStorage.themes);
-    document.querSelector('#themes').addEventListener('click',()=>{
-      if(localStorage.themes=='black'){
-        conssole.log('CLICCKKKKKK');
-
-      }else if(localStorage.themes=='white'){
-        console.log('CLIDCK WHITE');
-      }else{
-        console.log('CLIDCK else');
-      }
-      clickThemes();
-      localStorage.setItem('themes',`${blackThemes.color}`);
-    });
-  },70);
-
-  console.log(state.countClick+"_!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-        // localStorage.setItem('test', 1);
-
-        blackThemes.color='black';
-        localStorage.themes='black';
-        function clickThemes(){
-          if(state.countClick==1){
-            if(document.querySelector('#themes').checked==true){
-              blackThemes.color="black";
-              // localStorage.themes='black';
-              localStorage.setItem('themes',`${blackThemes.color}`);
-              console.log(blackThemes.color);
-            }else{
-              localStorage.setItem('themes',`${blackThemes.color}`);
-              console.log(blackThemes.color);
-            }
-          }
-        }
-        clickThemes();
-        if(document.querySelector('#themes').checked==true){
-          console.log('BLACK');
-        }
-        if(localStorage.themes=="black"){
-          console.log(!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1);
-        }
-
-        if(blackThemes.themes=='black'){
-          document.querySelector('body').style.cssText=`
-          background:black;
-          color:white;
-          `;
-          // document.querySelector('.buttonOnNextPhoto > button:nth-child(1)').style.cssText=`color:black;background:white;border:1px solid black;`;
-          document.querSelector('.openMenu').style.sccText=`
-            background:balck;color:white;
-          `;
-        }else{
-          console.log("ELSE");
-        }
-      }
+// if(state.countClick==1){
+//   // state.line='orange';
+//   setTimeout(()=>{
+//     console.log(localStorage.themes);
+//     document.querSelector('#themes').addEventListener('click',()=>{
+//       if(localStorage.themes=='black'){
+//         conssole.log('CLICCKKKKKK');
+//
+//       }else if(localStorage.themes=='white'){
+//         console.log('CLIDCK WHITE');
+//       }else{
+//         console.log('CLIDCK else');
+//       }
+//       clickThemes();
+//       localStorage.setItem('themes',`${blackThemes.color}`);
+//     });
+//   },70);
+//
+//   console.log(state.countClick+"_!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+//         // localStorage.setItem('test', 1);
+//
+//         blackThemes.color='black';
+//         localStorage.themes='black';
+//         function clickThemes(){
+//           if(state.countClick==1){
+//             if(document.querySelector('#themes').checked==true){
+//               blackThemes.color="black";
+//               // localStorage.themes='black';
+//               localStorage.setItem('themes',`${blackThemes.color}`);
+//               console.log(blackThemes.color);
+//             }else{
+//               localStorage.setItem('themes',`${blackThemes.color}`);
+//               console.log(blackThemes.color);
+//             }
+//           }
+//         }
+//         clickThemes();
+//         if(document.querySelector('#themes').checked==true){
+//           console.log('BLACK');
+//         }
+//         if(localStorage.themes=="black"){
+//           console.log(!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1);
+//         }
+//
+//         if(blackThemes.themes=='black'){
+//           document.querySelector('body').style.cssText=`
+//           background:black;
+//           color:white;
+//           `;
+//           // document.querySelector('.buttonOnNextPhoto > button:nth-child(1)').style.cssText=`color:black;background:white;border:1px solid black;`;
+//           document.querSelector('.openMenu').style.sccText=`
+//             background:balck;color:white;
+//           `;
+//         }else{
+//           console.log("ELSE");
+//         }
+//       }
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
@@ -317,7 +386,6 @@ function menuOpenClose(){
 if(window.innerWidth>700){
   console.log('loloooo');
 }else{
-
   menuOpenClose();
 }
 // function displayWidth(){
