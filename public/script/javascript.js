@@ -21,8 +21,8 @@ function blackWhite(){
       `;
     }
     document.querySelector('body').style.cssText=`
-    background:black;
-    color:white;
+      background:black;
+      color:white;
     `;
     document.querySelector('.buttonOnNextPhoto > button:nth-child(1)').style.cssText=`color:black;background:white;border:1px solid black;`;
     document.querySelector('.buttonOnNextButton > button:nth-child(1)').style.cssText=`color:black;background:white;border:1px solid black;`;
@@ -37,12 +37,12 @@ function blackWhite(){
     console.log("whiteThemes");
     state.background='white';
     state.color='violet';
-    state.line='yellow';
+    state.line='black';
   }else{
     console.log("elseThemes");
     state.background='white';
     state.color='violet';
-    state.line='yellow';
+    state.line='black';
   }
   const blackThemes={
     color: "white"
