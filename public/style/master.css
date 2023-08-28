@@ -100,7 +100,7 @@ header nav ul li a:focus:after {
     }
   }
   /* ******************************************* */
-  section:nth-child(1){
+  section > .firstSection{
     display:flex;
     justify-content:space-between;
     align-items:center;
@@ -108,7 +108,7 @@ header nav ul li a:focus:after {
     min-height:100vh;
     /* background: green; */
   }
-  section:nth-child(1) > span{
+  section > .firstSection > span{
     max-width:100%;
     display:flex;
     justify-content: start;
@@ -301,7 +301,12 @@ header nav ul li a:focus:after {
   }
 
 
-
+.secondSection{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
 
   body > main > section:nth-child(1){
     margin-top:1%;
@@ -354,7 +359,7 @@ body > main > section > p{
     /* background: violet; */
   }
 
-  body > main:nth-child(2) > section:nth-child(3){
+  body > main > section .threeSection{
     display:flex;
     margin-top:44px;
     justify-content: center;
@@ -363,6 +368,19 @@ body > main > section > p{
     width:calc(100% - 6%);
     max-width:550px;
     overflow: hidden;
+  }
+  @media(min-width:700px){
+    body > main > section .threeSection{
+      max-width:var(--maxWidth);
+      margin:25%;
+      background: red;
+    }
+    .threeSection > div:nth-child(1) > div:nth-child(2){
+      background: red;
+    }
+    .proc{
+      /* max-width:var(--maxWidth); */
+    }
   }
   .proc{
     width:calc(100% - 6%);
@@ -470,9 +488,15 @@ body > main:nth-child(2) > button:nth-child(4){
      color:white;
    }
 
-
+   .classMap{
+     display:flex;
+     justify-content: center;
+     align-items: center;
+     flex-wrap: wrap;
+     /* background: violet; */
+   }
    /* MAP */
-   body > main:nth-child(2) > section:nth-child(15){
+   body > main > section:nth-child(13){
      display:flex;
      justify-content: center;
      align-items: center;
@@ -605,4 +629,25 @@ body > main:nth-child(2) > button:nth-child(4){
 .openMenu h1:hover{
   background:grey;
   border-radius: 7px;
+}
+
+body > main:nth-child(2) > section:nth-child(13) > h2:nth-child(1){
+  text-align:center;
+}
+.article{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  fledx-direction:column;
+  width:calc(100% - 17px);
+  max-width: var(--maxWidth);
+}
+.article > .st{
+  /* margin:1%; */
+}
+.classHr{
+  width:calc(100% - 7%);
+  background:lightgray;
+  height:1px;
+  margin:3%;
 }
