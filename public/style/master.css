@@ -159,6 +159,7 @@ header nav ul li a:focus:after {
 @media(max-width:700px){
   .line{
     width:100%;
+    max-width: 230px;
     padding:0;
     margin:0;
   }
@@ -183,11 +184,14 @@ header nav ul li a:focus:after {
   @media(max-width:700px){
     .images > .fivePhoto > .line > img{
       width:100%;
+      /* max-width:400px; */
+      /* height:100%; */
       }
       .line{
         margin:1%;
         padding:0;
       }
+
   }
 
   /* плавное подчеркиваниен ссылки с лева на право */
