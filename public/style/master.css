@@ -595,3 +595,10 @@ body > main:nth-child(2) > button:nth-child(4){
   opacity:0;
   transition: all 1s ease-out;
 }
+.openMenu h1{
+  margin:3%;
+}
+.openMenu h1:hover{
+  background:grey;
+  border-radius: 7px;
+}
