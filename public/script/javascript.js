@@ -2,7 +2,7 @@ const state={};
 if(localStorage.themes=='black'){
   state.checkbox="true";
     state.line="white";
-
+    blackWhite();
 }else{
 
     state.checkbox="false";
@@ -10,33 +10,37 @@ if(localStorage.themes=='black'){
 
 }
 // console.log('click '+state);
-window.addEventListener('DOMContentLoaded',()=>{
-  console.log('DOMContentLoaded');
-  if(localStorage.themes=='black'){
-      blackWhite();
-    }else{
-        // blackWhite();
-        console.log("ELSE!!!!!!!!!!!!!!!!!!!!!!!!!");
-
-      }
-})
-function mutation(){
-  if(localStorage.themes=='white'){
-    localStorage.themes='black';
-    console.log('localStorage.theme WHITE--and '+state.checkbox);
-  }else if(localStorage.themes=='black'){
-    console.log('localStorage.themes BLACK');
-    localStorage.themes='white';
-    // if(state.countClick==1){
-    //   document.querSelector('checkbox').addEventListener('click',()=>{
-    //     console.log('oKkk');
-    //   });
-    // }
-  }else{
-    console.log('localStorage.ELSE');
-  }
-
-}
+// window.addEventListener('DOMContentLoaded',()=>{
+//   console.log('DOMContentLoaded');
+//   if(localStorage.themes=='black'){
+//       blackWhite();
+//     }else{
+//         // blackWhite();
+//         console.log("ELSE!!!!!!!!!!!!!!!!!!!!!!!!!");
+//
+//       }
+// });
+// function mutation(){
+//   localStorage.setItem('themes','black');
+//   if(localStorage.themes=='white'){
+//     state.line='white';
+//     localStorage.themes='black';
+//     blackWhite();
+//     console.log('localStorage.theme WHITE--and '+state.checkbox);
+//   }else if(localStorage.themes=='black'){
+//     console.log('localStorage.themes BLACK');
+//     // localStorage.themes='white';
+//     // if(state.countClick==1){
+//     //   document.querSelector('checkbox').addEventListener('click',()=>{
+//     //     console.log('oKkk');
+//     //   });
+//     // }
+//     window.location.href=`index.html`;
+//   }else{
+//     console.log('localStorage.ELSE');
+//   }
+//
+// }
 
 function blackWhite(){
   //--------------------------------------------------------
@@ -119,12 +123,17 @@ function intersectionObserverClick(){
   console.log('intersectionObserverClick');
     let observerS = new MutationObserver(mutationRecords => {
       console.log(mutationRecords); // console.log(изменения)
-      document.querySelector('#themes').addEventListener('click',()=>{
-        console.log('99999999');
-        localStorage.themes='black';
-        window.location.href='/';
-      });
     });
+    // document.querySelector('#themes').addEventListener('click',()=>{
+    //   if(localStorage.themes=='black'){
+    //     cosole.log('themes-000000000000');
+    //   }else{
+    //     console.log('99999999');
+    //     localStorage.themes='black';
+    //     blackWhite();
+    //     window.location.href='/';
+    //   }
+    // });
 
     // наблюдать за всем, кроме атрибутов
     observerS.observe(themes, {
@@ -132,12 +141,19 @@ function intersectionObserverClick(){
       subtree: true, // и более глубокими потомками
       characterDataOldValue: true // передавать старое значение в колбэк
     });
-mutation();
+// mutation();
 
+  // if(document.querySelector('#themes')!==true){
+  //   document.querSelector('#themes').addEventListener('click',()=>{
+  //     console.log('oKfdfd');
+  //   });
+  // }
     if(document.querySelector('#themes').checked==true){
-      // state.checkbox="false";
+      // state.line='yellow';
+      state.checkbox="true";
+      localStorage.themes=='black';
+      localStorage.setItem('themes','black');
       blackWhite();
-      // localStorage.themes=='black';
       console.log('oK');
       console.log(state);
     // }else if(document.querSelector('#themes').checked==false){
@@ -319,7 +335,7 @@ function menuOpenClose(){
       <h1 id="home-menu">home</h1>
       <h1 id="footer-menu">footer</h1>
       <h1><span>Call me:</span><br><a href='tel:+79137870404' style='color:`+`${state.color}`+`;text-decoration:none;'>+7 913 787 04 04</a></h1>
-      <h1>Black themes<input type="checkbox" id="themes"></h1>
+      <h1 id="themes-menu">Black</h1>
       `;
       document.querySelector('body').append(newBox);
       console.log(state.countClick +" on set INterval");
@@ -343,7 +359,11 @@ function menuOpenClose(){
       },70);
       document.querySelector('body > .openMenu').addEventListener('click',()=>{
         closeMenuSpan();
-        intersectionObserverClick();
+        //====================================================================
+        //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+        // intersectionObserverClick();
+        //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+        //===================================================================
         setTimeout(()=>{
           // document.querySelector('body > div').remove();
           document.querySelector('body > .openMenu').remove();
@@ -371,6 +391,28 @@ function menuOpenClose(){
         console.log('photo');
         window.location.href='#photos';
       });
+      document.querySelector('#themes-menu').addEventListener('click',()=>{
+         console.log('oKfdfd');
+         //
+         if(localStorage.themes=='black'){
+           console.log('chickBOXfalse');
+           // state.checkbox='true';
+           localStorage.themes='white';
+           blackWhite();
+           window.location.href='./index.html';
+         }else if(localStorage.themes=='white'){
+           console.log('CheckboxTrue');
+           localStorage.themes='black';
+           blackWhite();
+           // window.location.href='./index.html';
+          // state.checkbox='false';
+         }else{
+           console.log('Else ');
+           // localStorage.themes='black';
+           localStorage.themes='black';
+           blackWhite();
+         }
+       });
     }else if(state.countClick==2){
       closeMenuSpan();
       setTimeout(()=>{
