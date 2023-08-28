@@ -391,6 +391,15 @@ function menuOpenClose(){
         console.log('photo');
         window.location.href='#photos';
       });
+      if(document.querySelector('#themes-menu')!==null){
+        if(localStorage.themes=='black'){
+          document.querySelector('#themes-menu').innerHTML=`white theme`;
+        }else if(localStorage.themes=='white'){
+          document.querySelector('#themes-menu').innerHTML=`black theme`;
+        }else{
+          document.querySelector('#themes-menu').innerHTML=`theme black`;
+        }
+      }
       document.querySelector('#themes-menu').addEventListener('click',()=>{
          console.log('oKfdfd');
          //
