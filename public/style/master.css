@@ -197,11 +197,11 @@ header nav ul li a:focus:after {
   /* плавное подчеркиваниен ссылки с лева на право */
   .images > .fivePhoto > .line > span{
     /* text-decoration: underline; */
-    position: relative;
-  	color: black; /*задаём цвет ссылки*/
-  	cursor: pointer;
-  	line-height: 1; /*задаём высоту строки*/
-  	text-decoration: none; /*убираем подчёркивание*/
+    /* position: relative; */
+  	/* color: black;  */
+  	/* cursor: pointer; */
+  	/* line-height: 1;  */
+  	/* text-decoration: none;  */
   }
   .images > .fivePhoto > .line > span:after{
 	display: block;
