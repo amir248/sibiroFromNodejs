@@ -71,7 +71,8 @@ function blackWhite(){
     document.querySelector('.discount').style.cssText=`color:black;background:white;border:1px solid black;`;
     document.querySelector('button.getConsultation:nth-child(11)').style.cssText=`color:black;background:white;border:1px solid black;
     `;
-    document.querySelector('button.getConsultation:nth-child(2)').style.cssText=`color:black;background:white;border:1px solid black;`;
+    document.querySelector('button.getConsultation:nth-child(3)').style.cssText=`color:black;background:white;border:1px solid black;`;
+    // document.querySelector('button.getConsultation:nth-child(3)').style.cssText=`color:black;background:white;border:1px solid black;`;
 
   }else if(localStorage.themes=="white"){
     console.log("whiteThemes");
